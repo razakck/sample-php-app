@@ -46,13 +46,25 @@ jobs:
             repository_owner_id,
             ref
           }'
-      
+    
+     #Role 1 
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+          role-to-assume: ${{ secrets.AWS_GITHUB_OIDC_ROLE_ARN }}
           aws-region: ${{ env.AWS_REGION }}
+      # ROLE 2
+      # Role 1 -> Deployment Role
+      - name: Assume deployment role
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_CODEDEPLOY_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+          role-chaining: true
 
+      - name: Verify AWS identity
+        run: |
+          aws sts get-caller-identity
       - name: Create deployment artifact
         run: |
           zip -r application.zip . \
