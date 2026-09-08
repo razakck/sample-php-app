@@ -3,6 +3,7 @@
 <body background="images/2.png" style="background-repeat:no-repeat;
 background-size: 100% 100%">
 <br><br><br><br>
+<h4></h4>
 <div class="container">
   <div class="jumbotron vertical-center">
   	<table class="grid" cellspacing="0">
@@ -26,6 +27,7 @@ background-size: 100% 100%">
 </div>
 </div>
 <?php
+echo "<p>Hostname: " . htmlspecialchars(gethostname()) . "</p>";
 $firstname=$_POST['firstname'];
 $email=$_POST['email'];
 $servername = "intelli.coghw13fheqo.us-east-2.rds.amazonaws.com";
