@@ -27,7 +27,7 @@ background-size: 100% 100%">
 </div>
 </div>
 <?php
-echo "<p>Hostname: " . htmlspecialchars(gethostname()) . "</p>";
+echo "<p>vx Hostname: " . htmlspecialchars(gethostname()) . "</p>";
 $firstname=$_POST['firstname'];
 $email=$_POST['email'];
 $servername = "aws-capstone-iac-mysql.cnoss2qc4l6r.ap-south-1.rds.amazonaws.com";
