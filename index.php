@@ -30,7 +30,7 @@ background-size: 100% 100%">
 echo "<p>Hostname: " . htmlspecialchars(gethostname()) . "</p>";
 $firstname=$_POST['firstname'];
 $email=$_POST['email'];
-$servername = "intelli.coghw13fheqo.us-east-2.rds.amazonaws.com";
+$servername = "aws-capstone-iac-mysql.cnoss2qc4l6r.ap-south-1.rds.amazonaws.com";
 $username = "intel";
 $password = "intel123";
 $db = "intel";
