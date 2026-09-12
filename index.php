@@ -45,8 +45,13 @@ if ($conn->connect_error) {
     );
 }
    
-  
+  $table= "CREATE TABLE IF NOT EXISTS data (firstname VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL);"
+if ($conn->query($table) === TRUE) {
+    echo "Table created";
+} else {
+    echo "Error: table is failed to create" . $sql . "<br>" . $conn->error;
 }
+
 if(isset($_POST['firstname']) && isset($_POST['email'])){
 $sql = "INSERT INTO data (firstname,email)
 VALUES ('".$firstname."', '".$email."')";
