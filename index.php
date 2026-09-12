@@ -45,7 +45,7 @@ if ($conn->connect_error) {
     );
 }
    
-  $table= "CREATE TABLE IF NOT EXISTS data (firstname VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL);"
+  $table= "CREATE TABLE IF NOT EXISTS data (firstname VARCHAR(255) NOT NULL, email VARCHAR(255) NOT NULL)";
 if ($conn->query($table) === TRUE) {
     echo "Table created";
 } else {
