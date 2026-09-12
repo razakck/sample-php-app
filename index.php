@@ -35,7 +35,7 @@ $username = "intel";
 $password = "intel123";
 $db = "intel";
 // Create connection
-$conn = new mysqli($servername, $username, $password, $db);
+$conn = new mysqli($servername, $username, $password, $db,3306);
 
 // Check connection
 if ($conn->connect_error) {
